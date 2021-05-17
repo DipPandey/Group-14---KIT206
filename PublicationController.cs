@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assignment_2_Redo.Controller
+namespace Assignment_2_Redo.DBA
 {
     class PublicationController
     {
