@@ -83,12 +83,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Research\Position.cs" />
-    <Compile Include="Research\Publication.cs" />
-    <Compile Include="Research\Researcher.cs" />
-    <Compile Include="Research\Staff.cs" />
-    <Compile Include="Research\Student.cs" />
-    <Page Include="MainWindow.xaml">
+    <Compile Include="Controller\PublicationController.cs" />
+    <Compile Include="Controller\ResearcherController.cs" />
+    <Compile Include="DBA\Database.cs" />
+    <Compile Include="Model\Position.cs" />
+    <Compile Include="Model\Publication.cs" />
+    <Compile Include="Model\Researcher.cs" />
+    <Compile Include="Model\Staff.cs" />
+    <Compile Include="Model\Student.cs" />
+    <Compile Include="View\UserControl.xaml.cs">
+      <DependentUpon>UserControl.xaml</DependentUpon>
+    </Compile>
+    <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -96,10 +102,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\UserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -140,5 +150,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
