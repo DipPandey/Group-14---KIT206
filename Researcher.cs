@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 /*
  *  Researcher Class -  Has all of the Details of a Specific Researcher, which is then used
  *                      by the "Student" or "Staff" Classes as a base
- *  Author(s) So Far -  Harrison Adams, XXX
+ *  Author(s) So Far -  Harrison Adams, Nghia Duc Hoang
  *  Completion Date -   N/A
  */
 
 namespace Assignment_2_Redo.Research
 {
     //
-    public enum EmploymentLevel { Student, A, B, C, D, E };  //The Different Levels a Researcher can be
+    public enum Level { Student, A, B, C, D, E };  //The Different Levels a Researcher can be
     /*  Employment Level Details
      *  Type - Name - Expected Publications
      *  Student - Student - 0
@@ -25,26 +25,19 @@ namespace Assignment_2_Redo.Research
      *  E - Professor - 4
      */
 
+    public enum Campus { Hobart, Launceston, All }; //Stores the campuses available for a given researcher
 
-    public class Researcher
+    class Researcher
     {
         //Variables
-        public int id { get; set; }           // The ID of this researcher, used to identify them and is unique
-        public string GivenName { get; set; }  // The First Name of the Researcher
-        public string FamilyName { get; set; } // The Last Name of the Researcher
-        public string Title { get; set; }      // Eg: Mr, Ms, etc
-        public string School { get; set; }   // The School the Researcher is Currently At 
-        public string Campus { get; set; }   // The Campus the Researcher is Currently At (Hobart, Launceston, Cradle Coast)
-        public string Email { get; set; }      // The Email that can Contact the Researcher
-        public String Photo { get; set; }    // A Photo URL of the Researcher
-        public String degree { get; set; } // degree currently involved in
-        public int SupervisorId { get; set; }// supervisor id- null if not a supervisor
-
-        public DateTime utasStart { get; set; }// utas start date 
-        public DateTime currentStart { get; set }// current start date 
-
-
-        public List<Researcher> Skills { get; set; }
+        private int id;             // The ID of this researcher, used to identify them and is unique
+        private string GivenName;   // The First Name of the Researcher
+        private string FamilyName;  // The Last Name of the Researcher
+        private string Title;       // Eg: Mr, Ms, etc
+        private string School;      // The School the Researcher is Currently At 
+        private Campus Campus;      // The Campus the Researcher is Currently At (Hobart, Launceston, Cradle Coast)
+        private string Email;       // The Email that can Contact the Researcher
+        private string Photo;       // A Photo URL of the Researcher
 
         /*  Get the Data (User Input)
          *      Title - As "Mr", "Ms" or some other title like that
