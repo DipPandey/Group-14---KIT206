@@ -8,27 +8,20 @@ using System.Threading.Tasks;
  *  Position Class -    Has a position that the Researcher was in sometime, along with
  *                      their Starting Date of said Position, Position Level, and the
  *                      End Date of Position if applicable
- *  Author(s) So Far -  Harrison Adams, Nghia Duc Hoang
- *  Completion Date -   N/A
+ *  Author(s) So Far -  Harrison Adams, XXX
+ *  Completion Date -   20 May
  */
 
 namespace Assignment_2_Redo.Research
 {
-    class Position : Researcher
+    class Position
     {
-        //Variables (Change to Proper Format Later)
-        public Level level
-        {
-            get; set;
-        }
-        public DateTime start   //Start Date of Job
-        {
-            get; set;
-        }
-        public DateTime end     //End Date of Job
-        {
-            get; set;
-        }
+        //======================================================================================
+        //                                     Variables
+        //======================================================================================
+        public EmploymentLevel level { get; set; }    //The Employment Level that position has
+        public DateTime start { get; set; }    //Start Date of Job
+        public DateTime end { get; set; }      //End Date of Job
 
         /* Getting User Input
          *  Level has to be an ENUM using Researcher's "EmploymentLevel"
@@ -36,64 +29,45 @@ namespace Assignment_2_Redo.Research
          *  All have to be in proper format
          */
 
-        //Format it using "Title" or "ToTitle" Method
-
-        //Stores to Database
-
-
+        //======================================================================================
+        //                                     Functions
+        //======================================================================================
 
         /*
-         *  Title - 
-         *  @p1 - 
-         *  Output - 
+         *  Title - Changes the Employment Level to their Actual Position Name
+         *  Output - Position Name based on Level (String Output)
          */
-
-        /* public string Title()
+        public string Title
         {
-            return "";
+            get {
+                return "Help";
+            }
         }
-         */
 
+        //--------------------------------------------------------------------------------------
 
         /*
-         * ToTitle - 
-         * @p1 - 
-         * Output - 
+         *  ToTitle - Changes the Employment Level to their Actual Position Name
+         *  Output -  Position Name based on Level (String Output)
          */
-        public string ToTitle(Level level)
+        public string ToTitle
         {
-            if (level.Equals("Student"))
-            {
-                return "Student";
-            }
-            else if (level.Equals("A"))
-            {
-                return "Postdoc";
-            }
-            else if (level.Equals("B"))
-            {
-                return "Lecturer";
-            }
-            else if (level.Equals("C"))
-            {
-                return "Senior Lecturer";
-            }
-            else if (level.Equals("D"))
-            {
-                return "Associate Professor";
-            }
-            else
-            {
-                return "Professor";
+            get {
+                string levelName = "";
+                switch (level)
+                {
+                    case EmploymentLevel.Student: levelName = "Student"; break;
+                    case EmploymentLevel.A: levelName = "Postdoc"; break;
+                    case EmploymentLevel.B: levelName = "Lecturer"; break;
+                    case EmploymentLevel.C: levelName = "Senior Lecturer"; break;
+                    case EmploymentLevel.D: levelName = "Associate Professor"; break;
+                    case EmploymentLevel.E: levelName = "Professor"; break;
+                }
+                return levelName;
             }
         }
 
-        public override string ToString()
-        {
-            return level + " " + start + " " + end; 
-        }
     }
-
 
 }
         
